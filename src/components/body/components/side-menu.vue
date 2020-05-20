@@ -7,6 +7,7 @@
       :open-names="openedNames"
       :width="widthNums"
       @on-select="handleSelect($event)"
+      @on-open-change='add($event)'
     >
     <!-- 供应商管理 -->
       <Submenu name="digital_logisticst/szwl_supplier">
@@ -63,7 +64,7 @@
           <span class="itemSpan">供应商内部不良信息</span>
         </MenuItem>
         </Submenu>
-      </Submenu>  
+      </Submenu>
       <!-- 风险预警管理 -->
       <Submenu name="digital_logisticst/szwl_venture">
         <template slot="title">
@@ -73,7 +74,7 @@
           <MenuItem name="digital_logisticst/szwl_venture/bd">
             <span class="itemSpan">不良行为预警</span>
           </MenuItem>
-        
+
         <Submenu name="digital_logisticst/szwl_settlement/fpgl">
           <template slot="title">
             <span class="menuUnderline">发票管理</span>
@@ -377,7 +378,7 @@
           <img src="../../../assets/images/side_icon/szwl/htgl.png">
           <span class="menuUnderline">供应商管理</span>
         </template>
-        
+
       </Submenu> -->
     </Menu>
   </div>
@@ -417,6 +418,16 @@ export default {
     this.activeName = this.$route.path.substr(1).split('/')[0]
   },
   methods: {
+    add (e) {
+      console.log(111111111)
+      console.log(e)
+      if (e[1] === 'digital_logisticst/szwl_supplier/sup') {
+        this.$router.push('supp')
+        // this.$route.path('supp')
+      }
+
+      // this.$router.push('supp')
+    },
     toResourceOverall (e) {},
     handleSelect (name) {
       // 多次重复点击一个菜单，加判断

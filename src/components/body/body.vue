@@ -1,6 +1,6 @@
 <template>
     <Layout class="body-layout-con">
-        <Sider hide-trigger collapsible :width="widthNums" :collapsed-width="64" class="left-sider" :style="{overflow: 'hidden'}">
+        <Sider hide-trigger collapsible :width="widthNums" :collapsed-width="64" class="left-sider" :style="{overflow: 'hidden'}" @click="add">
             <SideMenu @on-select="turnToPage" />
         </Sider>
         <Content class="body-wrapper bg-gray">
@@ -36,6 +36,9 @@ export default {
     },
     handle (...p) {
       console.log(p)
+    },
+    add () {
+      console.log(111)
     }
   },
   watch: {},
